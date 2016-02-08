@@ -1,0 +1,18 @@
+<div class="container">
+
+  <form name="postForm" ng-submit="postForm.$valid && blog.addPost()" novalidate>
+<h2>Post</h2>
+      <label for="Title">Title</label><br>
+      <input ng-model="blog.newPost.title" type="text" class="form-control" placeholder="Title" title="Title" required/><br>
+
+      <label for="Content">Content</label><br>
+      <textarea ng-model="blog.newPost.content" class="form-control" placeholder="Content" title="Content" ng-minlength="1" required></textarea><br>
+
+      <input type="submit" class="btn btn-success" value="Submit Post" ng-click="blog.selectTab('blog')"/><br>
+
+  </form>
+  <br><blockquote ng-show="postForm.$valid">
+    <h3>{{ blog.newPost.title }}</h3>
+    <p>{{ blog.newPost.content }}</p>
+  </blockquote>
+</div>

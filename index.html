@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>AngularJS Blog</title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+
+<body ng-app="blogApp">
+  <div ng-controller="postsController as blog">
+    <ng-include src="'/app/components/navigationView.html'"></ng-include>
+
+    <div ng-show="blog.isSelected('new')">
+      <new-post-form></new-post-form>
+    </div>
+    <h2>BLOG</h2>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <ng-include src="'/app/components/posts/views/postsView.html'"></ng-include>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js'></script>
+  <script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular-animate.js'></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.min.js"></script>
+  <script src="/app/components/posts/postsController.js"></script>
+  <script src="/app/components/posts/postdDirectives.js"></script>
+</body>
+
+</html>

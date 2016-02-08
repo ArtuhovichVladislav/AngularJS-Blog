@@ -1,0 +1,13 @@
+<div class="container" ng-controller="postsController as blog">
+  <div class="row">
+    <div class="col-md-12">
+      <div ng-repeat="post in blog.posts | orderBy: '-id'">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <post-form></post-form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
