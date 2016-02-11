@@ -4,7 +4,7 @@
     app.controller('postsController',  ['$http', function($http){
       var blog = this;
 
-      this.posts = {};
+      blog.posts = {};
       $http.get('../../../storage/posts.json').success(function(data){
           blog.posts = data;
       });
@@ -19,17 +19,18 @@
         return blog.tab === checkTab;
       };
 
-      this.newPost = {};
-        this.addPost = function(){
-            this.newPost.id = blog.posts.length;
-            this.posts.push(this.newPost);
-            this.newPost = {};
-        };
+      blog.post = {};
+      blog.addPost = function(){
+        blog.post.createdOn = Date.now();
+        blog.posts.push(this.post);
+        blog.tab = 0;
+        blog.post ={};
+      };
 
       blog.deletePost = function(id){
-          this.posts.splice(id, 1);
-          for(var i = 0; i < this.posts.length; i++) {
-              this.posts[i].id = i;
+          blog.posts.splice(id, 1);
+          for(var i = 0; i < blog.posts.length; i++) {
+              blog.posts[i].id = i;
           }
       };
     }]);

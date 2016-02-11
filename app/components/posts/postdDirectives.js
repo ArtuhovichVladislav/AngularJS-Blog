@@ -5,10 +5,10 @@ angular.module('blogApp').directive('newPostForm', function() {
   };
 })
 
-.directive('postForm', function() {
+.directive('postPage', function() {
   return {
     restrict: 'E',
-    templateUrl: '/app/components/posts/views/postView.html'
+    templateUrl: '/app/components/posts/views/postPage.html'
   };
 })
 

@@ -8,7 +8,7 @@
       <label for="Content">Content</label><br>
       <textarea ng-model="blog.newPost.content" class="form-control" placeholder="Content" title="Content" ng-minlength="1" required></textarea><br>
 
-      <input type="submit" class="btn btn-success" value="Submit Post" ng-click="blog.selectTab('blog')"/><br>
+      <input type="submit" class="btn btn-success" value="Submit Post" ng-click="blog.addPost()"/><br>
 
   </form>
   <br><blockquote ng-show="postForm.$valid">

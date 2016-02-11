@@ -5,23 +5,26 @@
   <meta charset="UTF-8">
   <title>AngularJS Blog</title>
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="app/css/custom.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 
 <body ng-app="blogApp">
   <div ng-controller="postsController as blog">
     <ng-include src="'/app/components/navigationView.html'"></ng-include>
 
+    <div ng-show="blog.isSelected('blog')">
+      <ng-include src="'/app/components/posts/views/postsView.html'"></ng-include>
+    </div>
+
     <div ng-show="blog.isSelected('new')">
       <new-post-form></new-post-form>
     </div>
-    <h2>BLOG</h2>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <ng-include src="'/app/components/posts/views/postsView.html'"></ng-include>
-        </div>
-      </div>
+
+    <div ng-show="blog.isSelected('postPage')">
+      <post-page></post-page>
     </div>
+
 
   </div>
 

@@ -1,0 +1,38 @@
+body {
+    padding-top: 100px;
+    font-family: Merriweather;
+}
+
+.gap-right {
+  margin-right: 10px;
+}
+
+.gap-bottom {
+  margin-bottom: 20px;
+}
+.time {
+  color: #999;;
+}
+
+.post-title {
+    font-weight: bold;
+    color: black;
+}
+
+.col-md-gutter, .col-md-main, .col-md-right {
+  padding: 0;
+  width: 100%;
+  position: relative
+}
+
+.mini-post-title {
+  color: black;
+}
+
+.latest {
+  color: #999;
+}
+
+ h1{
+      color: black;
+}
