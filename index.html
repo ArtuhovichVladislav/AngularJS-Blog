@@ -21,11 +21,14 @@
       <new-post-form></new-post-form>
     </div>
 
-    <div ng-show="blog.isSelected('postPage')">
-      <post-page></post-page>
+    <div class="container">
+      <div class="row">
+        <div ng-repeat="post in blog.posts | orderBy: '-id'" ng-show="blog.isSelected($index)">
+          <post-page></post-page>
+        </div>
+      </div>
     </div>
-
-
+    
   </div>
 
   <script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js'></script>

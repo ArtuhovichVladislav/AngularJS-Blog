@@ -1,17 +1,13 @@
-<div class="row">
-  <h1>{{post.title}}</h1>
-  <i class="fa fa-clock-o time"> &nbsp;5 min ago</i>
-  <img ng-src="{{post.img}}" class="gap-bottom" alt="Cinque Terre" width="730" height="500">
-  <h3>{{post.content}}</h3>
-
-  <button class="btn btn-danger right" ng-click="blog.deletePost(post.id)">Delete</button>
-
-  <div class="col-md-4">
-    <div ng-repeat="post in blog.posts | orderBy: 'id'">
-      <a href="#"><h4 class="mini-post-title">{{ post.title }}</h4></a>
-      <hr>
-    </div>
+<h1>{{post.title}}</h1>
+<i class="fa fa-clock-o time"> &nbsp;5 min ago</i><br>
+<img ng-src="{{post.img}}" alt="Cinque Terre" width="730" height="500">
+<h3>{{post.content}}</h3>
+<button class="btn btn-primary pull-left" ng-click="blog.selectTab('blog')">Back to Posts</button>
+<button class="btn btn-danger pull-right" ng-click="blog.deletePost(post.id)">Delete</button><br>
+<hr>
+<h2 class="latest">Other</h2>
+<div ng-repeat="post in blog.posts | orderBy: '-id' | limitTo: '3'">
+  <div ng-click="blog.selectTab($index)">
+    <a href="#"><h4 class="mini-post-title">{{ post.title }}</h4></a>
   </div>
-
-
 </div>
