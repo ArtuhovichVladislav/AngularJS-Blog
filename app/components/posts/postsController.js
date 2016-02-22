@@ -21,7 +21,7 @@
 
       blog.post = {};
       blog.addPost = function(){
-        blog.post.createdOn = Date.now();
+        blog.post.createdAt = Date.now();
         blog.posts.push(this.post);
         blog.tab = 0;
         blog.post ={};
@@ -33,5 +33,27 @@
               blog.posts[i].id = i;
           }
       };
+
+      blog.addPost = function(){
+        blog.post.createdAt = Date.now();
+        blog.posts.push(this.post);
+        blog.tab = 0;
+        blog.post ={};
+      };
+
+      blog.deletePost = function(id){
+          blog.posts.splice(id, 1);
+          for(var i = 0; i < blog.posts.length; i++) {
+              blog.posts[i].id = i;
+          }
+      };
+
+      blog.post.comment = [];
+      blog.addComment = function() {
+        blog.post.comment.createdAt = Date.now();
+        blog.posts.comments.push(this.post.comment);
+        blog.post.comment = [];
+      }
     }]);
+
 })();

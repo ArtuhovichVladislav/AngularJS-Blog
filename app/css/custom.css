@@ -1,6 +1,6 @@
 body {
     padding-top: 100px;
-    font-family: Merriweather;
+    font-family: 'Open Sans', Verdana, Tahoma, sans-serif;
 }
 
 .gap-right {
@@ -12,7 +12,7 @@ body {
 }
 
 .time {
-  color: #999;;
+  color: #999;
 }
 
 .post-title {
@@ -39,5 +39,28 @@ body {
 }
 
 .mini-post {
-  display: inline-block;
+  display: inline;
+}
+
+.circle-image {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: inline;
+}
+
+.author {
+  font-size: 14px;
+  color: #999;
+}
+.fa {
+  padding: 15px;
+}
+
+.fa-comment-o:hover {
+  color: black;
+  cursor: pointer;
+}
+.post-info {
+  margin: 30px;
 }

@@ -1,0 +1,10 @@
+<form name="commentNew" ng-submit="commentNew.$valid && blog.addComment()" novalidate>
+<h2>Post</h2>
+      <label for="Comment">Comment</label><br>
+      <textarea ng-model="blog.post.comment.text" class="form-control" placeholder="Comment" title="Comment" ng-minlength="1" required></textarea><br>
+
+      <label for="Image">Author Name</label><br>
+      <input type="text" ng-model="blog.post.content.author" class="form-control" placeholder="Your Name" /><br>
+
+      <input type="submit" class="btn btn-success" value="Submit Comment" ng-click="blog.addComment()"/><br>
+</form>

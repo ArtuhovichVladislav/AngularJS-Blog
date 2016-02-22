@@ -11,12 +11,12 @@
       <label for="Image">Image</label><br>
       <input type="text" ng-model="blog.post.img" class="form-control" placeholder="Insert Image Link" /><br>
 
-      <input type="submit" class="btn btn-success" value="Submit Post" ng-click="blog.addPost()"/><br>
+      <label for="Author">Author</label><br>
+      <input ng-model="blog.post.author" class="form-control" placeholder="Author" title="Author" ng-minlength="1" required></input><br>
 
+      <label for="AuthorImg">Author Avatar</label><br>
+      <input type="text" ng-model="blog.post.authorImg" class="form-control" placeholder="Insert Avatar Link" /><br>
+
+      <input type="submit" class="btn btn-success" value="Submit Post" ng-click="blog.addPost()"/><br>
   </form>
-  <br><blockquote ng-show="postForm.$valid">
-    <h3>{{ blog.post.title }}</h3>
-    <img ng-src="{{blog.post.img}}" alt="Cinque Terre" width="730" height="500">
-    <p>{{ blog.post.content }}</p>
-  </blockquote>
 </div>

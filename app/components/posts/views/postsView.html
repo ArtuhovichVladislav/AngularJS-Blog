@@ -5,7 +5,7 @@
         <div ng-repeat="post in blog.posts | orderBy: '-id' | limitTo: 1">
           <div ng-click="blog.selectTab($index)">
             <img ng-src="{{post.img}}" class="gap-bottom" alt="Cinque Terre" width="730" height="500">
-            <a href="#"><h1>{{post.title}}</h1></a>
+            <a href="#"><h2>{{post.title}}</h2></a>
           </div>
         </div>
       </div>
@@ -26,13 +26,19 @@
         <div class="panel-body">
           <div ng-click="blog.selectTab($index)">
             <img ng-src="{{post.img}}" class="pull-left gap-right" alt="Cinque Terre" width="280" height="200" style="display:inline">
-            <a href="#"><h2 class="post-title" >{{ post.title }}</h2></a>
+            <a href="#"><h3 class="post-title" >{{ post.title }}</h3></a>
           </div>
-          <h2><small>{{ post.content | limitTo: 150 }}{{post.content.length > 20 ? '...' : ''}} </small></h2>
+          <h3><small>{{ post.content | limitTo: 150 }}{{post.content.length > 20 ? '...' : ''}} </small></h3>
+            <div class="pull-right " ng-click="blog.selectTab($index)">
+              <a href="#">Читать далее <i class="fa fa-angle-right"></i></a>
+            </div>
+
         </div>
         <div class="panel-footer">
-          <button class="btn btn-danger right" ng-click="blog.deletePost(post.id)">Delete</button>
-          <i class="fa fa-clock-o time"> &nbsp;5 min ago</i>
+          <img ng-src="{{post.authorImg}}" class="circle-image" alt="Cinque Terre">
+          <small class="author">By {{post.author}}</small>
+          <i class="fa fa-clock-o time pull-right"> &nbsp;{{post.createdAt}}</i>
+          <i class="fa fa-comment-o time pull-right" ng-click="blog.selectTab($index)">&nbsp;{{post.comments.length}}</i></a>
         </div>
       </div>
     </div>

@@ -12,6 +12,13 @@ angular.module('blogApp').directive('newPostForm', function() {
   };
 })
 
+.directive('commentNew', function() {
+  return {
+    restrict: 'E',
+    templateUrl: '/app/components/posts/views/commentNew.html'
+  };
+})
+
 .directive('posts', function() {
   return {
     restrict: 'E',
